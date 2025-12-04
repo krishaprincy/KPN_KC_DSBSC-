@@ -49,10 +49,44 @@ Model Waveform
 
 Program
 
+```
+Am = 2.3;
+fm = 124;
+Ac = 4.6;
+fc = 1240;
+fs = 12400;
+
+t = 0:1/fs:2/fm;
+
+m = Am*cos(2* 3.14 *fm*t);
+c = Ac*cos(2* 3.14 *fc*t);
+//s1 = (Ac + m) .* cos(2*3.14*fc*t);
+//s2 = (Ac - m) .* cos(2*3.14*fc*t);
+
+//s = s1 - s2;
+
+s = m .* c; // REAL DSB-SC
+
+subplot(3,1,1)
+plot(t, m)
+
+subplot(3,1,2)
+plot(t, c)
+
+subplot(3,1,3)
+plot(t, s)
+
+```
+
 Output Graph
+
+<img width="940" height="508" alt="image" src="https://github.com/user-attachments/assets/9da2af47-aefb-4796-ae3f-ca58a8d51f79" />
 
 
 Tablular Column
+
+![WhatsApp Image 2025-12-04 at 15 38 33_f694ff64](https://github.com/user-attachments/assets/09e3da15-6bfd-420f-aa9a-35f9d290c992)
+
 
 
 Result
